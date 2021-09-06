@@ -59,16 +59,16 @@ namespace Laboratorio4.Handlers
 
         public bool crearPlaneta(PlanetaModel planeta)
         {
-            string consulta = "INSERT INTO Planeta (archivoPlaneta, tipoArchivo, nombrePlaneta, numeroAnillos, tipoPlaneta)" +
-                "VALUES (@archivo, @tipoArchivo, @nombre, @numeroAnillos, @tipoPlaneta)";
+            string consulta = "INSERT INTO Planeta (archivoPlaneta, tipoArchivo, nombrePlaneta, numeroAnillos, tipoPlaneta) " +
+                "VALUES (@archivo, @tipoArchivo, @nombre, @numeroAnillos, @tipoPlaneta) ";
             SqlCommand comandoParaConsulta = new SqlCommand(consulta, conexion);
             SqlDataAdapter adaptadorParaTabla = new SqlDataAdapter(comandoParaConsulta);
 
             comandoParaConsulta.Parameters.AddWithValue("@archivo", obtenerBytes(planeta.archivo));
             comandoParaConsulta.Parameters.AddWithValue("@tipoArchivo", planeta.archivo.ContentType);
-            comandoParaConsulta.Parameters.AddWithValue("@archivo", planeta.nombre);
-            comandoParaConsulta.Parameters.AddWithValue("@archivo", planeta.numeroAnillos);
-            comandoParaConsulta.Parameters.AddWithValue("@archivo", planeta.tipo);
+            comandoParaConsulta.Parameters.AddWithValue("@nombre", planeta.nombre);
+            comandoParaConsulta.Parameters.AddWithValue("@numeroAnillos", planeta.numeroAnillos);
+            comandoParaConsulta.Parameters.AddWithValue("@tipoPlaneta", planeta.tipo);
 
             conexion.Open();
             bool exito = comandoParaConsulta.ExecuteNonQuery() >= 1;  // indica que se agregO una tupla(cuando es mayor o igual que 1)

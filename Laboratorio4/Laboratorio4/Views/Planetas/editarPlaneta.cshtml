@@ -11,10 +11,7 @@
 <head>
 </head>
 <body>
-    @using (Html.BeginForm("editarPlaneta", "Planetas", FormMethod.Post, new
-    {
-        enctype = "multipart/form-data"
-    }))
+    @using (Html.BeginForm("editarPlaneta", "Planetas", FormMethod.Post, new { enctype = "multipart/form-data"}))
     {
         @Html.AntiForgeryToken()
         <h1>Formulario de edición de planetas</h1>

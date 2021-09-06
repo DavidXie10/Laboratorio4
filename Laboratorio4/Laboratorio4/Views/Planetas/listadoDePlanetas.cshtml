@@ -11,13 +11,16 @@
 <body>
     <h1>Listado de planetas</h1>
     <div class="seccion_1" id="s1">
-        @for (int planeta = 0; planeta < ViewBag.planetas.Count; ++planeta)
+        @foreach (var planeta in ViewBag.planetas)
         {
             <hr />
-            <h2>Ficha del planeta: @ViewBag.planetas[planeta].id</h2>
-            <p>Nombre: @ViewBag.planetas[planeta].nombre</p>
-            <p>Tipo: @ViewBag.planetas[planeta].tipo</p>
-            <p>Número de anillos: @ViewBag.planetas[planeta].numeroAnillos</p>
+            <h4><strong>Ficha del planeta: </strong>@planeta.id</h4>
+            <p>
+                Nombre: @planeta.nombre <br />
+                Tipo: @planeta.tipo <br />
+                Número de anillos: @planeta.numeroAnillos <br />
+            </p>
+                @Html.ActionLink("Modificar información", "editarPlaneta", new { identificador = planeta.id }, new { @class = "btn btn alert-info", @onclick = "return confirm('¿Quiere modificar este planeta ? ');" })
             <hr />
         }
     </div>

@@ -25,10 +25,7 @@
                 </div>
             }
         }
-        @using (Html.BeginForm("crearPlaneta", "Planetas", FormMethod.Post, new
-        {
-            enctype = "multipart/form-data"
-        }))
+        @using (Html.BeginForm("crearPlaneta", "Planetas", FormMethod.Post, new{ enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
             <h1>Formulario de creación de planetas</h1>
