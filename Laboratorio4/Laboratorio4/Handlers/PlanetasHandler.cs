@@ -75,5 +75,26 @@ namespace Laboratorio4.Handlers
             conexion.Close();
             return exito;
         }
+
+        public bool modificarPlaneta(PlanetaModel planeta)
+        {
+            string consulta = "UPDATE Planeta SET archivoPlaneta = @archivo, tipoArchivo = @tipoArchivo, nombrePlaneta = @nombre, " +
+                "numeroAnillos = @numeroAnillos, tipoPlaneta = @tipoPlaneta " + 
+                "WHERE planetaId = @planetaId";
+            SqlCommand comandoParaConsulta = new SqlCommand(consulta, conexion);
+            SqlDataAdapter adaptadorParaTable = new SqlDataAdapter(comandoParaConsulta);
+            comandoParaConsulta.Parameters.AddWithValue("@archivo", obtenerBytes(planeta.archivo));
+            comandoParaConsulta.Parameters.AddWithValue("@tipoArchivo", planeta.archivo.ContentType);
+            comandoParaConsulta.Parameters.AddWithValue("@nombre", planeta.nombre);
+            comandoParaConsulta.Parameters.AddWithValue("@numeroAnillos", planeta.numeroAnillos);
+            comandoParaConsulta.Parameters.AddWithValue("@tipoPlaneta", planeta.tipo);
+            comandoParaConsulta.Parameters.AddWithValue("@planetaId", planeta.id);
+
+            conexion.Open();
+            bool exito = comandoParaConsulta.ExecuteNonQuery() >= 1;
+            conexion.Close();
+
+            return exito;
+        }
     }
 }
