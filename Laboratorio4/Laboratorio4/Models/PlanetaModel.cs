@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
+// System.ComponentModel.DataAnnotations incluye las librerías que permiten utilizar los elementos Requiered, Display y los que se presentaran a continuación. Estos elementos sirven para hacer el binding de las propiedades del modelo en la vista
+
 namespace Laboratorio4.Models
 {
     public class PlanetaModel
@@ -23,6 +25,7 @@ namespace Laboratorio4.Models
         [RegularExpression("^[0-9]*$", ErrorMessage = "Debe ingresar números")]
         public int numeroAnillos { get; set; }
 
+        // HttpPostedFileBase los cuales servirán para recuperar archivos(pdf, imágenes etc.)
         [Required(ErrorMessage = "Debe agregar un archivo (image, pdf, etc...)")]
         [Display(Name = "Ingrese el archivo con los detalles del planeta")]
         public HttpPostedFileBase archivo { get; set; }

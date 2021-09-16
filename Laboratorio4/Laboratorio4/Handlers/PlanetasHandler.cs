@@ -96,5 +96,25 @@ namespace Laboratorio4.Handlers
 
             return exito;
         }
+
+        public Tuple<byte[], string> descargarContenido(int id)
+        {
+            byte[] bytes;
+            string contentType;
+            string consulta = "SELECT archivoPlaneta, tipoArchivo FROM Planeta WHERE planetaId = @planetaId";
+            
+            SqlCommand comandoParaConsulta = new SqlCommand(consulta, conexion);
+            SqlDataAdapter adaptadorParaTabla = new
+            SqlDataAdapter(comandoParaConsulta);
+            comandoParaConsulta.Parameters.AddWithValue("@planetaId", id);
+            conexion.Open();
+            SqlDataReader lectorDeDatos = comandoParaConsulta.ExecuteReader();
+            lectorDeDatos.Read();
+
+            bytes = (byte[])lectorDeDatos["archivoPlaneta"];
+            contentType = lectorDeDatos["tipoArchivo"].ToString();
+            conexion.Close();
+            return new Tuple<byte[], string>(bytes, contentType);
+        }
     }
 }
