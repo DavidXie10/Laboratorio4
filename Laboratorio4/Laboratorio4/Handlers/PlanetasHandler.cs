@@ -19,7 +19,7 @@ namespace Laboratorio4.Handlers
            ConfigurationManager.ConnectionStrings["PlanetasConnection"].ToString();
             conexion = new SqlConnection(rutaConexion);
         }
-        private DataTable crearTablaConsulta(string consulta)
+        private DataTable CrearTablaConsulta(string consulta)
         {
             SqlCommand comandoParaConsulta = new SqlCommand(consulta, conexion);
             SqlDataAdapter adaptadorParaTabla = new
@@ -34,7 +34,7 @@ namespace Laboratorio4.Handlers
         {
             List<PlanetaModel> planetas = new List<PlanetaModel>();
             string consulta = "SELECT * FROM Planeta ";
-            DataTable tablaResultado = crearTablaConsulta(consulta);
+            DataTable tablaResultado = CrearTablaConsulta(consulta);
             foreach (DataRow columna in tablaResultado.Rows)
             {
                 planetas.Add(
