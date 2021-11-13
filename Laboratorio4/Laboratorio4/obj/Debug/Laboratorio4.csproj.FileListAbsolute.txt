@@ -74,6 +74,5 @@ C:\Users\admin\Documents\IngenieraDeSoftware\LaboratoriosCI0126\Laboratorio4\Lab
 C:\Users\admin\Documents\IngenieraDeSoftware\LaboratoriosCI0126\Laboratorio4\Laboratorio4\Laboratorio4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\admin\Documents\IngenieraDeSoftware\LaboratoriosCI0126\Laboratorio4\Laboratorio4\Laboratorio4\obj\Debug\Laboratorio4.csproj.AssemblyReference.cache
 C:\Users\admin\Documents\IngenieraDeSoftware\LaboratoriosCI0126\Laboratorio4\Laboratorio4\Laboratorio4\obj\Debug\Laboratorio4.csproj.CoreCompileInputs.cache
-C:\Users\admin\Documents\IngenieraDeSoftware\LaboratoriosCI0126\Laboratorio4\Laboratorio4\Laboratorio4\obj\Debug\Laboratorio4.csproj.CopyComplete
 C:\Users\admin\Documents\IngenieraDeSoftware\LaboratoriosCI0126\Laboratorio4\Laboratorio4\Laboratorio4\obj\Debug\Laboratorio4.dll
 C:\Users\admin\Documents\IngenieraDeSoftware\LaboratoriosCI0126\Laboratorio4\Laboratorio4\Laboratorio4\obj\Debug\Laboratorio4.pdb
