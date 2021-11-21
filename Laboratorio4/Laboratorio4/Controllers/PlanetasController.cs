@@ -23,7 +23,7 @@ namespace Laboratorio4.Controllers
          */
         public ActionResult crearPlaneta()
         {
-            return View();
+            return View("crearPlaneta");
         }
 
         // también desplegará la misma vista que el primero, pero únicamente después que a través de un formulario haga post direccionado los datos este método

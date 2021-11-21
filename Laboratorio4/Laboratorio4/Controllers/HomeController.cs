@@ -23,8 +23,9 @@ namespace Laboratorio4.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+            ViewBag.ValorParaTest = 1;
 
-            return View();
+            return View("Contact");
         }
     }
 }
