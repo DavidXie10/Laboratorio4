@@ -10,7 +10,7 @@ namespace Laboratorio4.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
 
         public ActionResult About()
